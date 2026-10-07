@@ -1,22 +1,25 @@
-# Business Analyst Portfolio (static)
+# Ewaen Erhahon: Business Analyst Portfolio
 
-Plain HTML, CSS and JavaScript. No npm, Node, React or build step.
+A static portfolio made of plain HTML, CSS and JavaScript. No npm, Node.js, React or build step. Open `index.html` to preview it locally.
 
 ## Upload to GitHub
-1. Create a new repository on github.com.
-2. Click **Add file > Upload files** and drag in everything inside this folder (index.html must sit in the repository root).
+1. Create a new repository on github.com (for example `portfolio`).
+2. Choose **Add file > Upload files** and drag in **everything inside this folder** (not the folder itself), so `index.html` sits in the repository root.
 3. Click **Commit changes**.
 
 ## Turn on GitHub Pages
-**Settings > Pages > Deploy from a branch > main > / (root) > Save.** GitHub serves `index.html` at `https://YOUR-USERNAME.github.io/REPO-NAME/`.
+**Settings > Pages > Build and deployment > Deploy from a branch > main > / (root) > Save.** GitHub serves `index.html` as the home page; your link appears on that page after a minute or two.
 
-## Edit your content
-Almost everything lives in `assets/js/data.js`: name, title, bio, About text, skills, experience, education, projects (including case-study text), CV path, contact details, LinkedIn, GitHub and the Formspree endpoint. Edit only the text between quotes.
+## Where to change things
+Almost everything is in **`assets/js/data.js`**: name, title, location, tagline, bio, About text, skills, experience, projects (including case-study text), CV path, email, phone, LinkedIn, GitHub and the Formspree endpoint (`formspreeEndpoint`).
+- **Page titles / SEO**: the `<head>` of `index.html`.
+- **Photo**: replace `assets/images/profile.png` (or change `photo` in data.js).
+- **CV**: replace the PDF in `assets/documents/` and update `resume` in data.js.
+- **Add a project**: copy one `{ ... }` block inside `projects` in data.js, change the text, keep the commas.
+- **Project images / supporting documents**: none were supplied, so cards are text only. To add images, place files in `assets/images/` and ask for an `image` field to be added to the card.
+- **Colours**: CSS variables at the top of `assets/css/style.css` (`:root` for light, `[data-theme=dark]` for dark).
+- **Fonts**: the Google Fonts link in `index.html` and the `--head` / `--body` variables in style.css.
+- **Favicon**: `favicon.svg` in the root. Replace it with your own file of the same name.
 
-- **Images:** put files in `assets/images/` and set the project's `image` path in data.js. Redwood Insurance has no image yet: add `project-03.jpg` and set `image: "assets/images/project-03.jpg"`.
-- **CV:** replace `assets/documents/Ewaen_Erhahon_BA_CV.pdf` (or change the `resume` path).
-- **Add a project:** copy one project block in data.js and change the text.
-- **Colours:** variables at the top of `assets/css/style.css`.
-- **Fonts:** `--serif` and `--sans` in the same place.
-- **Page title and social metadata:** the `<head>` of index.html.
-- **Favicon:** replace `favicon.ico` in the root.
+## Contact form
+The form posts to your Formspree endpoint. The first message you send may require you to confirm your email address in Formspree.
